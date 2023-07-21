@@ -1,72 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
-
+<head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>AI & ML - NIELIT CHANDIGARH</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        /* Other CSS styles */
+        /* ... */
 
-    <!--
-      This is the page head - it contains info the browser uses
-      Like the title, which appears on the browser tab but not inside the page
-      Further down you'll see the content that displays in the page
-    -->
-    <title>Hello World!</title>
+        /* Responsive adjustments for the topic cards */
+        @media (max-width: 991.98px) { /* Medium-sized screens */
+            .row-cols-md-2 {
+                column-count: 1;
+            }
+        }
 
-    <!-- The website stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
-
-    <!-- The website JavaScript file -->
-    <script src="/script.js" defer></script>
-  </head>
-  <body>
-    <!--
-      The body includes the content you see in the page
-      Each element is defined using tags, like this <div></div>
-      The attributes like class="wrapper" let us style elements in the CSS
-    -->
-    <div class="wrapper">
-      <div class="content" role="main">
-        <h1 class="title">Hello World!</h1>
-        <img
-          src="https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2Fillustration.svg?v=1618177344016"
-          class="illustration"
-          alt="Editor illustration"
-          title="Click the image!"
-        />
-        <div class="instructions">
-          <h2>Using this project</h2>
-          <p>
-            This is the Glitch <strong>Hello Website</strong> project. You can
-            use it to build your own site. Check out the code in the editor and open
-            the <span class="fileopener" data-file="TODO.md" data-line="0"
-              >TODO</span> for next steps!
-          </p>
-          <!--  🚧 TODO: ADD BUTTON HERE -->
-
-          <!-- Once you've added the button from TODO.md, click it in the page -->
-          <!-- Check out the function in script.js to see how it works -->
-        </div>
-      </div>
+        @media (max-width: 767.98px) { /* Small screens */
+            .row-cols-md-2, .row-cols-xl-4 {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <div class="container px-4 px-lg-5 my-3 text-center">
+        <img src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/NIELIT-Preview-removebg-preview.png?v=1689957175488" alt="NIELIT Logo" class="img-fluid" style="max-height: 100px;" />
     </div>
-    <!-- The footer holds our remix button — you can keep or delete it ✂ -->
-    <footer class="footer">
-      <div class="links"></div>
-      <a
-        class="btn--remix"
-        target="_top"
-        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
-      >
-        <img
-          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
-          alt=""
-        />
-        Remix on Glitch
-      </a>
-    </footer>
-  </body>
+
+    <!-- Header - Introduction to AI & ML -->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Welcome to the AI & ML With NIELIT Chandigarh</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Explore the exciting world of Artificial Intelligence and Machine Learning</p>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Section - AI & ML Topics -->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5">
+                <!-- Row 1 -->
+                <div class="col-12 mb-5">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
+                        <!-- Topic 1: Introduction to AI -->
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ai1.webp?v=1689957190629" alt="AI Topic 1" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">Introduction to Artificial Intelligence</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1_YUn7zXoRt6820QlypRiBxuPbtTy--zC/view?usp=drive_link" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Topic 2: Machine Learning Fundamentals -->
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ai1.webp?v=1689957190629" alt="ai Topic 2" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">Airtificial Intelligence Fundamentals</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="path_to_topic2_pdf_or_slides.pdf" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Topic 3: AI/ML Topic 3 -->
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ai2.jpg?v=1689957201357" alt="AI/ML Topic 3" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">AI/ML Topic 3</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="path_to_topic3_pdf_or_slides.pdf" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Topic 4: Add more topics here ... -->
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ai2.jpg?v=1689957201357" alt="AI/ML Topic 4" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">AI/ML Topic 4</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="path_to_topic4_pdf_or_slides.pdf" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ... -->
+                        <!-- Add more topics here up to Topic 12 -->
+                        <!-- ... -->
+
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-12 mb-5">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
+                        <!-- Topic 13: Add more topics here ... -->
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ml1.jpg?v=1689957212650" alt="AI/ML" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">Machine Learning Fundamentals</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1_YUn7zXoRt6820QlypRiBxuPbtTy--zC/view?usp=sharing" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ... -->
+                     <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ml1.jpg?v=1689957212650" alt="AI/ML Topic 6" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">AI/ML Topic 6</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1_YUn7zXoRt6820QlypRiBxuPbtTy--zC/view?usp=sharing" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ml1.jpg?v=1689957212650" alt="AI/ML Topic 7" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">AI/ML Topic 7</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1_YUn7zXoRt6820QlypRiBxuPbtTy--zC/view?usp=sharing" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ml1.jpg?v=1689957212650" alt="AI/ML Topic 8" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">AI/ML Topic 8</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1_YUn7zXoRt6820QlypRiBxuPbtTy--zC/view?usp=sharing" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ml1.jpg?v=1689957212650" alt="AI/ML Topic 9" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">AI/ML Topic 9</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1_YUn7zXoRt6820QlypRiBxuPbtTy--zC/view?usp=sharing" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ml1.jpg?v=1689957212650" alt="AI/ML Topic 10" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">ML Topic 10</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1_YUn7zXoRt6820QlypRiBxuPbtTy--zC/view?usp=sharing" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ml1.jpg?v=1689957212650" alt="AI/ML Topic 11" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">ML Topic 11</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1_YUn7zXoRt6820QlypRiBxuPbtTy--zC/view?usp=sharing" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Topic image (you can use relevant images for each topic) -->
+                                <img class="card-img-top" src="https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/ml1.jpg?v=1689957212650" alt="AI/ML Topic 12" />
+                                <!-- Topic details -->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Topic name -->
+                                        <h5 class="fw-bolder">AI/ML 12</h5>
+                                    </div>
+                                </div>
+                                <!-- Topic actions -->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <!-- Link to PDF/Slides -->
+                                        <a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1_YUn7zXoRt6820QlypRiBxuPbtTy--zC/view?usp=sharing" target="_blank">View PDF/Slides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ... -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- ... Rest of the footer section ... -->
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS -->
+    <script src="js/scripts.js"></script>
+</body>
 </html>
