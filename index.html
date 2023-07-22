@@ -15,23 +15,6 @@
       <style>
         /* Check css/styles.css file it contains all the styles included modify as per your needs */
         /* Other CSS styles */
-        /* CSS styles for the chatbot container */
-.chatbot-container {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 300px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  display: none;
-  /* Add transition property to create a smooth slide-in effect */
-  transition: transform 0.3s ease;
-}
-
-/* Other CSS styles for the chatbot container, header, messages, and input */
-
     </style>
 </head>
 <body>
@@ -336,8 +319,7 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </section> 
  <!-- Footer-->
         <footer class="py-5 bg-dark">
   <div class="container">
@@ -350,22 +332,6 @@
     <p class="m-0 text-center text-white">Copyright &copy; NIELIT Chandigarh 2023</p>
   </div>
 </footer>
-  
-  <!-- Chatbot container -->
-    <div class="chatbot-container">
-        <div class="chatbot-header">
-            <h4>Chat with our AI Assistant</h4>
-            <button class="chatbot-close-btn" onclick="toggleChatbot()">Close</button>
-        </div>
-        <div class="chatbot-messages" id="chatbotMessages">
-            <!-- Chat messages will be appended here -->
-        </div>
-        <div class="chatbot-input">
-            <input type="text" id="chatInput" placeholder="Type your message..." />
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-
   
 <!-- Go to top button -->
 <a href="#top" class="go-to-top" title="Go to Top"><i class="bi bi-arrow-up-circle"></i></a>
