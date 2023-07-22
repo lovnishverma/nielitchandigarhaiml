@@ -10,6 +10,58 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ /* Custom styles for the header with background image */
+        header {
+            position: relative;
+            background-image: url("https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/Header_cover.jpg?v=1690017248024");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 200px 0; /* Adjust the padding to control the content's vertical position */
+        }
+
+        /* Add the transparent layer */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency here (0.5 means 50% opacity) */
+        }
+
+        /* Custom styles for the header text */
+        .header-content {
+            position: relative;
+            z-index: 1; /* Move the text above the transparent layer */
+            text-align: center;
+        }
+
+        .header-content h1 {
+            color: white; /* White color */
+        }
+
+        .header-content p {
+            color: white; /* White color */
+        }
+
+        /* ... */
+
+        /* Responsive adjustments for the topic cards */
+        @media (max-width: 991.98px) { /* Medium-sized screens */
+            .row-cols-md-2 {
+                column-count: 1;
+            }
+        }
+
+        @media (max-width: 767.98px) { /* Small screens */
+            .row-cols-md-2, .row-cols-xl-4 {
+                column-count: 1;
+            }
+        }
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -21,8 +73,8 @@
   --bs-green: #198754;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
-  --bs-black: #000;
-  --bs-white: #fff;
+  --bs-black: black;
+  --bs-white: white;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
   --bs-gray-100: #f8f9fa;

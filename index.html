@@ -12,62 +12,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <style>
+      <style>
+        /* Check css/styles.css file it contains all the styles included modify as per your needs */
         /* Other CSS styles */
-
-        /* Custom styles for the header with background image */
-        header {
-            position: relative;
-            background-image: url("https://cdn.glitch.global/2e4e1fd5-3063-4ad2-9509-f801ce34a838/Header_cover.jpg?v=1690017248024");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 200px 0; /* Adjust the padding to control the content's vertical position */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        /* Add the transparent layer */
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency here (0.5 means 50% opacity) */
-            z-index: -1; /* Move the transparent layer below other elements */
-        }
-
-        /* Custom styles for the header text */
-        header .text-white {
-            color: #964B00; /* Brown color */
-            z-index: 1; /* Move the text above the transparent layer */
-        }
-
-        /* Custom styles for the paragraph text in the header */
-        header p.lead {
-            color: #fff; /* White color */
-            z-index: 1; /* Move the text above the transparent layer */
-        }
-
-        /* ... */
-
-        /* Responsive adjustments for the topic cards */
-        @media (max-width: 991.98px) { /* Medium-sized screens */
-            .row-cols-md-2 {
-                column-count: 1;
-            }
-        }
-
-        @media (max-width: 767.98px) { /* Small screens */
-            .row-cols-md-2, .row-cols-xl-4 {
-                column-count: 1;
-            }
-        }
     </style>
 </head>
 <body>
@@ -77,8 +24,8 @@
     </div>
 
     <!-- Header - Introduction to AI & ML -->
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
+     <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5 header-content">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Welcome to the Artificial Intelligence and Machine Learning With NIELIT Chandigarh</h1>
                 <p class="lead fw-normal mb-0">Explore the exciting world of Artificial Intelligence and Machine Learning</p>
