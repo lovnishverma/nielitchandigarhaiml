@@ -128,6 +128,35 @@ a:hover {
   color: #00f;
 }
 
+/* Go to top button styles */
+.go-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-size: 24px;
+  color: #ffffff;
+  background-color: #333333;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.go-to-top i {
+  display: block;
+}
+
+/* Show the button on scroll */
+.go-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
 
         /* ... */
 
