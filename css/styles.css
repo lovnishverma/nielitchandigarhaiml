@@ -46,6 +46,88 @@
         .header-content p {
             color: white; /* White color */
         }
+/* Footer styles */
+footer {
+  position: relative;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  margin-bottom: 10px; /* Add some margin to separate from the footer text */
+}
+
+footer .social-icons a {
+  color: #fff;
+  margin: 0 10px; /* Add some horizontal spacing between the icons */
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #00f;
+}
+
+/* Apply a fade-in animation to the header */
+header {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply a slide-up animation to the sections */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1s forwards;
+}
+
+/* Keyframes for the slide-up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply a fade-in animation to paragraphs within sections */
+section p {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Apply a scale animation to images */
+img {
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+/* Apply a color change animation to links */
+a {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00f;
+}
+
 
         /* ... */
 
