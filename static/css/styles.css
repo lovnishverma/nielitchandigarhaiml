@@ -118,11 +118,20 @@ a:hover {
 
     /* Custom CSS to style the log out link */
     .logout-link {
-        color: white; /* Set the text color to white */
+        color: black; /* Set the text color to black */
         text-decoration: none; /* Remove underline from the link */
     }
 
     .logout-link:hover {
+        text-decoration: none; /* Remove underline from the link on hover */
+    }
+    /* Custom CSS to style the admin link */
+    .admin-link {
+        color: white; /* Set the text color to white */
+        text-decoration: none; /* Remove underline from the link */
+    }
+
+    .admin-link:hover {
         text-decoration: none; /* Remove underline from the link on hover */
     }
 
