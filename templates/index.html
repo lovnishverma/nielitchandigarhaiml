@@ -11,7 +11,7 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="static/css/styles.css" rel="stylesheet" />
       <style>
         /* Check css/styles.css file it contains all the styles included modify as per your needs */
         /* Other CSS styles */
@@ -25,6 +25,8 @@
 
     <!-- Header - Introduction to AI & ML -->
      <header class="bg-dark py-5">
+       <!-- Time badge-->
+       <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{time}}</div>
         <div class="container px-4 px-lg-5 my-5 header-content">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Welcome to the Artificial Intelligence &amp; Machine Learning With NIELIT Chandigarh</h1>
@@ -338,7 +340,7 @@
       <a href="https://twitter.com/chd_nielit" target="_blank"><i class="bi bi-twitter"></i></a>
       <a href="https://instagram.com/nielitchandigarh" target="_blank"><i class="bi bi-instagram"></i></a>
     </div>
-    <p class="m-0 text-center text-white">Copyright &copy; NIELIT Chandigarh 2023 made with &#128151; </p>
+    <p class="m-0 text-center text-white">Copyright &copy; NIELIT Chandigarh {{date}} made with &#128151; </p>
   </div>
 </footer>
   
@@ -349,6 +351,6 @@
     <!-- Bootstrap core JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS -->
-    <script src="js/scripts.js"></script>
+    <script src="static/js/scripts.js"></script>
 </body>
 </html>
