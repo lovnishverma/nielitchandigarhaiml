@@ -37,7 +37,7 @@ def home():
     # Get the visitor count
     visitor_count = get_visitor_count()
 
-    return render_template("index.html", date=date, time=time, year=year, visitor_count=visitor_count)
+    return render_template("nielit.html", date=date, time=time, year=year, visitor_count=visitor_count)
 
 if __name__ == '__main__':
     app.run()
