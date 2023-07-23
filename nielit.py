@@ -4,6 +4,15 @@ import pytz
 
 app = Flask(__name__)
 
+# Helper function to read and update visitor count
+def get_visitor_count():
+    with open("visitor_count.txt", "r") as f:
+        count = int(f.read())
+    count += 1
+    with open("visitor_count.txt", "w") as f:
+        f.write(str(count))
+    return count
+
 @app.route('/')
 def home():
     # Get the current UTC time
@@ -22,7 +31,10 @@ def home():
     date = india_time.strftime("%Y-%m-%d")
     time = india_time.strftime("%I:%M %p")
 
-    return render_template("index.html", date=date, time=time)
+    # Get the visitor count
+    visitor_count = get_visitor_count()
+
+    return render_template("index.html", date=date, time=time, visitor_count=visitor_count)
 
 if __name__ == '__main__':
     app.run()
