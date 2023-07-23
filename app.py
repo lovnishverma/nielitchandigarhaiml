@@ -7,7 +7,7 @@ import pytz
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ab#1867$@817'  # Replace with a strong random key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  # Replace with your desired database filename
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  #database filename
 
 db = SQLAlchemy(app)
 
@@ -117,7 +117,7 @@ def list_users():
         users = User.query.all()
         return render_template('user_list.html', users=users)
     else:
-        flash("You do not have permission to access this page.", 'error')
+        flash("You do not have permission to access Admin page.", 'error')
         return redirect(url_for('dashboard'))
 
 @app.route('/delete_user/<int:user_id>', methods=['POST'])
