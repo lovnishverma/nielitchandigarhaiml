@@ -106,6 +106,31 @@ def register():
 
     return render_template('register.html')
 
+@app.route('/users')
+@login_required
+def list_users():
+    users = User.query.all()
+    return render_template('user_list.html', users=users)
+
+@app.route('/delete_user/<int:user_id>', methods=['POST'])
+@login_required
+def delete_user(user_id):
+    if current_user.username == "admin@nielit.com":
+        if current_user.id == user_id:
+            flash("You cannot delete your own account.", 'error')
+        else:
+            user = User.query.get(user_id)
+            if user:
+                db.session.delete(user)
+                db.session.commit()
+                flash("User '{}' has been deleted.".format(user.username), 'success')
+            else:
+                flash("User not found.", 'error')
+    else:
+        flash("You do not have permission to perform this action.", 'error')
+    return redirect(url_for('list_users'))
+
+  
 @app.route('/logout')
 @login_required
 def logout():
