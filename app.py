@@ -65,8 +65,9 @@ def dashboard():
 
     # Get the visitor count
     visitor_count = get_visitor_count()
+    username = current_user.username  # Get the username of the current user
 
-    return render_template("nielit.html", date=date, time=time, year=year, visitor_count=visitor_count)
+    return render_template("nielit.html", username=username, date=date, time=time, year=year, visitor_count=visitor_count)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
