@@ -31,10 +31,13 @@ def home():
     date = india_time.strftime("%Y-%m-%d")
     time = india_time.strftime("%I:%M %p")
 
+    # Extract only the year from the date
+    year = india_time.strftime("%Y")
+    
     # Get the visitor count
     visitor_count = get_visitor_count()
 
-    return render_template("index.html", date=date, time=time, visitor_count=visitor_count)
+    return render_template("index.html", date=date, time=time, year=year, visitor_count=visitor_count)
 
 if __name__ == '__main__':
     app.run()
