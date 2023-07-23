@@ -97,20 +97,28 @@ def register():
         if user:
             flash('Username already exists. Please choose a different username.', 'error')
         else:
-            hashed_password = generate_password_hash(password)
-            new_user = User(username=username, email=email, password=hashed_password)
-            db.session.add(new_user)
-            db.session.commit()
-            flash('Registration successful. You can now log in.', 'success')
-            return redirect(url_for('login'))
+            existing_user = User.query.filter_by(email=email).first()
+            if existing_user:
+                flash('Email already exists. Please choose a different email.', 'error')
+            else:
+                hashed_password = generate_password_hash(password)
+                new_user = User(username=username, email=email, password=hashed_password)
+                db.session.add(new_user)
+                db.session.commit()
+                flash('Registration successful. You can now log in.', 'success')
+                return redirect(url_for('login'))
 
     return render_template('register.html')
 
 @app.route('/users')
 @login_required
 def list_users():
-    users = User.query.all()
-    return render_template('user_list.html', users=users)
+    if current_user.username == "admin":
+        users = User.query.all()
+        return render_template('user_list.html', users=users)
+    else:
+        flash("You do not have permission to access this page.", 'error')
+        return redirect(url_for('dashboard'))
 
 @app.route('/delete_user/<int:user_id>', methods=['POST'])
 @login_required
@@ -130,7 +138,6 @@ def delete_user(user_id):
         flash("You do not have permission to perform this action.", 'error')
     return redirect(url_for('list_users'))
 
-  
 @app.route('/logout')
 @login_required
 def logout():
