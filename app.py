@@ -63,11 +63,24 @@ def dashboard():
     # Extract only the year from the date
     year = india_time.strftime("%Y")
 
+    # Get the current hour in the India time zone
+    india_hour = india_time.hour
+
+    # Determine the time of day based on the current hour
+    if 5 <= india_hour < 12:
+        time_of_day = 'Morning'
+    elif 12 <= india_hour < 17:
+        time_of_day = 'Afternoon'
+    elif 17 <= india_hour < 21:
+        time_of_day = 'Evening'
+    else:
+        time_of_day = 'Night'
+    
     # Get the visitor count
     visitor_count = get_visitor_count()
     username = current_user.username  # Get the username of the current user
 
-    return render_template("nielit.html", username=username, date=date, time=time, year=year, visitor_count=visitor_count)
+    return render_template("nielit.html", username=username, time_of_day=time_of_day, date=date, time=time, year=year, visitor_count=visitor_count)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
