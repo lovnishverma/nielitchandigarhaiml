@@ -6,7 +6,13 @@
     <title>User List</title>
     <!-- Add Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+<style>
+        /* Additional styles */
+        .logo {
+            max-width: 150px; /* Adjust the width as needed */
+        }
+    </style>
+  </head>
 <body>
     <div class="container mt-5">
         <center>
@@ -23,6 +29,7 @@
                 {% endfor %}
             {% endwith %}
         </center>
+      <a class="btn btn-warning" href="/"> Go Back </a>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -39,7 +46,7 @@
                         <td>{{ user.username }}</td>
                         <td>{{ user.email }}</td>
                         <td>
-                            {% if current_user.username == "admin@nielit.com" and current_user.id != user.id %}
+                            {% if current_user.username == "admin" and current_user.id != user.id %}
                                 <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}">
                                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                 </form>

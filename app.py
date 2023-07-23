@@ -115,7 +115,7 @@ def list_users():
 @app.route('/delete_user/<int:user_id>', methods=['POST'])
 @login_required
 def delete_user(user_id):
-    if current_user.username == "admin@nielit.com":
+    if current_user.username == "admin":
         if current_user.id == user_id:
             flash("You cannot delete your own account.", 'error')
         else:
