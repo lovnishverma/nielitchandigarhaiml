@@ -133,8 +133,27 @@ def list_users():
         users = User.query.all()
         return render_template('user_list.html', users=users)
     else:
-        flash("You do not have permission to access the Admin page.", 'error')
+        flash("You do not have permission to access Admin page.", 'error')
         return redirect(url_for('dashboard'))
+
+@app.route('/delete_user/<int:user_id>', methods=['POST'])
+@login_required
+def delete_user(user_id):
+    if current_user.username == "admin":
+        if current_user.id == user_id:
+            flash("You cannot delete your own account.", 'error')
+        else:
+            user = User.query.get(user_id)
+            if user:
+                db.session.delete(user)
+                db.session.commit()
+                flash("User '{}' has been deleted.".format(user.username), 'success')
+            else:
+                flash("User not found.", 'error')
+    else:
+        flash("You do not have permission to perform this action.", 'error')
+    return redirect(url_for('list_users'))
+
 
 # Topic model for the database table
 class Topic(db.Model):
@@ -178,6 +197,16 @@ def add_topic():
             return redirect(url_for('admin_panel'))
 
         return render_template('add_topic.html')
+
+    flash("You do not have permission to access the Admin panel.", 'error')
+    return redirect(url_for('dashboard'))
+# Admin Panel - List Topics
+@app.route('/admin/list_topics')
+@login_required
+def list_topics():
+    if current_user.is_authenticated and current_user.username == "admin":
+        topics = Topic.query.all()
+        return render_template('list_topics.html', topics=topics)
 
     flash("You do not have permission to access the Admin panel.", 'error')
     return redirect(url_for('dashboard'))
