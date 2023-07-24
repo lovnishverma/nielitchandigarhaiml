@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modify Topic</title>
 </head>
-
 <body>
     <h1>Modify Topic</h1>
-    <form action="{{ url_for('modify_topic', topic_id=topic.id) }}" method="post">
+    <form method="post" action="{{ url_for('modify_topic', topic_id=topic.id) }}">
         <label for="topicImage">Topic Image URL:</label>
-        <input type="text" id="topicImage" name="topicImage" value="{{ topic.topic_image }}" required><br>
-
+        <input type="text" id="topicImage" name="topicImage" value="{{ topic.topic_image }}" required>
+        <br>
         <label for="topicName">Topic Name:</label>
-        <input type="text" id="topicName" name="topicName" value="{{ topic.topic_name }}" required><br>
-
+        <input type="text" id="topicName" name="topicName" value="{{ topic.topic_name }}" required>
+        <br>
         <label for="topicDetails">Topic Details:</label>
-        <textarea id="topicDetails" name="topicDetails" required>{{ topic.topic_details }}</textarea><br>
-
+        <textarea id="topicDetails" name="topicDetails" rows="4" required>{{ topic.topic_details }}</textarea>
+        <br>
         <label for="pdfLink">PDF Link:</label>
-        <input type="text" id="pdfLink" name="pdfLink" value="{{ topic.pdf_link }}" required><br>
-
-        <input type="submit" value="Update Topic">
+        <input type="text" id="pdfLink" name="pdfLink" value="{{ topic.pdf_link }}" required>
+        <br>
+        <button type="submit">Update Topic</button>
     </form>
     <a href="{{ url_for('admin_panel') }}">Back to Admin Panel</a>
 </body>
-
 </html>

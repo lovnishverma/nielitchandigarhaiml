@@ -83,7 +83,7 @@ def dashboard():
     # Fetch all topics from the database
     topics = Topic.query.all()
 
-    return render_template("main.html",topics=topics, username=username, time_of_day=time_of_day, date=date, time=time, year=year, visitor_count=visitor_count)
+    return render_template("main.html", topics=topics, username=username, time_of_day=time_of_day, date=date, time=time, year=year, visitor_count=visitor_count)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -208,17 +208,6 @@ def modify_topic(topic_id):
     flash("You do not have permission to access the Admin panel.", 'error')
     return redirect(url_for('dashboard'))
 
-@app.route('/admin/list_topics')
-@login_required
-def list_topics():
-    if current_user.is_authenticated and current_user.username == "admin":
-        # Fetch all topics from the database
-        topics = Topic.query.all()
-        return render_template('list_topics.html', topics=topics)
-
-    flash("You do not have permission to access the Admin panel.", 'error')
-    return redirect(url_for('dashboard'))
-  
 # Admin Panel - Delete Topic
 @app.route('/admin/delete_topic/<int:topic_id>', methods=['POST'])
 @login_required
