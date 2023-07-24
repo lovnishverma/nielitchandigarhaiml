@@ -144,11 +144,22 @@ class Topic(db.Model):
     topic_details = db.Column(db.Text, nullable=False)
     pdf_link = db.Column(db.String(200), nullable=False)
 
-# Admin Page - Add New Topic
-@app.route('/admin', methods=['GET', 'POST'])
-def admin_page():
-    if request.method == 'POST':
-        if current_user.is_authenticated and current_user.username == "admin":
+# Admin Panel - Main Page
+@app.route('/admin')
+@login_required
+def admin_panel():
+    if current_user.is_authenticated and current_user.username == "admin":
+        return render_template('admin_panel.html')
+    
+    flash("You do not have permission to access the Admin panel.", 'error')
+    return redirect(url_for('dashboard'))
+
+# Admin Panel - Add New Topic
+@app.route('/admin/add_topic', methods=['GET', 'POST'])
+@login_required
+def add_topic():
+    if current_user.is_authenticated and current_user.username == "admin":
+        if request.method == 'POST':
             topic_image = request.form['topicImage']
             topic_name = request.form['topicName']
             topic_details = request.form['topicDetails']
@@ -163,13 +174,16 @@ def admin_page():
             )
             db.session.add(new_topic)
             db.session.commit()
+            flash("Topic added successfully.", 'success')
+            return redirect(url_for('admin_panel'))
 
-            return redirect(url_for('main_page'))
+        return render_template('add_topic.html')
 
-    return render_template('admin.html')
+    flash("You do not have permission to access the Admin panel.", 'error')
+    return redirect(url_for('dashboard'))
 
 # Admin Panel - Modify Topic
-@app.route('/modify_topic/<int:topic_id>', methods=['GET', 'POST'])
+@app.route('/admin/modify_topic/<int:topic_id>', methods=['GET', 'POST'])
 @login_required
 def modify_topic(topic_id):
     if current_user.is_authenticated and current_user.username == "admin":
@@ -191,11 +205,11 @@ def modify_topic(topic_id):
 
         return render_template('modify_topic.html', topic=topic)
 
-    flash("You do not have permission to modify topics.", 'error')
-    return redirect(url_for('admin_panel'))
+    flash("You do not have permission to access the Admin panel.", 'error')
+    return redirect(url_for('dashboard'))
 
 # Admin Panel - Delete Topic
-@app.route('/delete_topic/<int:topic_id>', methods=['POST'])
+@app.route('/admin/delete_topic/<int:topic_id>', methods=['POST'])
 @login_required
 def delete_topic(topic_id):
     if current_user.is_authenticated and current_user.username == "admin":
@@ -209,7 +223,7 @@ def delete_topic(topic_id):
             flash("Topic deleted successfully.", 'success')
 
     return redirect(url_for('admin_panel'))
-  
+
 @app.route('/logout')
 @login_required
 def logout():
