@@ -43,18 +43,24 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5">
                 <!-- Row 1 -->
-                <div class="col-12 mb-5">
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
-    <div class="topics-container">
-        {% for topic in topics %}
-            <div class="topic-card">
-                <img src="{{ topic.topic_image }}" alt="{{ topic.topic_name }}" class="topic-image">
-                <h2 class="topic-name">{{ topic.topic_name }}</h2>
-                <p class="topic-details">{{ topic.topic_details }}</p>
-                <a href="{{ topic.pdf_link }}" target="_blank" class="pdf-link">View PDF/Slides</a>
-            </div>
-        {% endfor %}
-    </div>
+    {% if topics %}
+        <div class="row">
+            {% for topic in topics %}
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="{{ topic.topic_image }}" alt="{{ topic.topic_name }}" class="card-img-top" style="height: 200px;">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ topic.topic_name }}</h3>
+                            <p class="card-text">{{ topic.topic_details }}</p>
+                            <a href="{{ topic.pdf_link }}" target="_blank" class="btn btn-primary">View PDF/Slides</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No topics available.</p>
+    {% endif %}
                     </div>
                 </div>
             </div>
@@ -75,7 +81,7 @@
      <a href="/logout" target="_blank" class="logout-link"> LOG OUT </a>
 </div>
      <!-- Admin badge-->
-       <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><a href="/users" target="_blank" class="admin-link">Admin Page </a></div>
+       <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><a href="/admin" target="_blank" class="admin-link">Admin Page </a></div>
     <!-- Special Badge -->
 <div class="badge bg-link text-white position-absolute" style="bottom: 0.5rem; left: 0.5rem">
     Official Website: <a href="https://www.nielit.gov.in/chandigarh/index.php" target="_blank">NIELIT Chandigarh</a>

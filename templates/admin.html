@@ -1,29 +1,25 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <!-- Admin Page - Add New Topic -->
-<div class="admin-page">
-  <h2>Add New Topic</h2>
-  <form action="/add_topic" method="post">
-    <!-- Topic Image Link -->
-    <label for="topicImage">Topic Image Link:</label>
-    <input type="text" id="topicImage" name="topicImage" required>
-    
-    <!-- Topic Name -->
-    <label for="topicName">Topic Name:</label>
-    <input type="text" id="topicName" name="topicName" required>
-    
-    <!-- Topic Details -->
-    <label for="topicDetails">Topic Details:</label>
-    <textarea id="topicDetails" name="topicDetails" required></textarea>
-    
-    <!-- Google Drive Link for PDF/Slides -->
-    <label for="pdfLink">Google Drive Link for PDF/Slides:</label>
-    <input type="url" id="pdfLink" name="pdfLink" required>
-    
-    <!-- Submit Button -->
-    <button type="submit">Add Topic</button>
-  </form>
-</div>
-
-  </body>
+<head>
+    <!-- Add your head section content here -->
+</head>
+<body>
+    <!-- Add your admin page content here -->
+    <h1>Add New Topic</h1>
+    <form method="POST" action="{{ url_for('admin_page') }}">
+        <label for="topicImage">Topic Image Link:</label>
+        <input type="text" id="topicImage" name="topicImage" required><br>
+        
+        <label for="topicName">Topic Name:</label>
+        <input type="text" id="topicName" name="topicName" required><br>
+        
+        <label for="topicDetails">Topic Details:</label><br>
+        <textarea id="topicDetails" name="topicDetails" required></textarea><br>
+        
+        <label for="pdfLink">PDF/Slides Link:</label>
+        <input type="text" id="pdfLink" name="pdfLink" required><br>
+        
+        <input type="submit" value="Add Topic">
+    </form>
+</body>
 </html>
