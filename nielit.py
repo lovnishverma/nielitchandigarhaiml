@@ -151,6 +151,47 @@ def delete_user(user_id):
         flash("You do not have permission to perform this action.", 'error')
     return redirect(url_for('list_users'))
 
+# Topic model for the database table
+class Topic(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    topic_image = db.Column(db.String(200), nullable=False)
+    topic_name = db.Column(db.String(100), nullable=False)
+    topic_details = db.Column(db.Text, nullable=False)
+    pdf_link = db.Column(db.String(200), nullable=False)
+
+# Create the database and the table
+db.create_all()
+
+# Admin Page - Add New Topic
+@app.route('/admin', methods=['GET', 'POST'])
+def admin_page():
+    if request.method == 'POST':
+        topic_image = request.form['topicImage']
+        topic_name = request.form['topicName']
+        topic_details = request.form['topicDetails']
+        pdf_link = request.form['pdfLink']
+
+        # Store the topic data in the database
+        new_topic = Topic(
+            topic_image=topic_image,
+            topic_name=topic_name,
+            topic_details=topic_details,
+            pdf_link=pdf_link
+        )
+        db.session.add(new_topic)
+        db.session.commit()
+
+        return redirect(url_for('main_page'))
+
+    return render_template('admin.html')
+
+# Main Website Page
+@app.route('/')
+def main_page():
+    # Fetch all topics from the database
+    topics = Topic.query.all()
+    return render_template('main.html', topics=topics)
+  
 @app.route('/logout')
 @login_required
 def logout():
