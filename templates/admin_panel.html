@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
 </head>
-
 <body>
-    <h1>Welcome to the Admin Panel</h1>
-    <p>Here, you can manage topics and users.</p>
+    <h1>Welcome, Admin!</h1>
     <ul>
         <li><a href="{{ url_for('add_topic') }}">Add New Topic</a></li>
         <li><a href="{{ url_for('list_users') }}">Manage Users</a></li>
-        <li><a href="{{ url_for('manage_topics') }}">Manage Topics</a></li>
+        <li><a href="{{ url_for('list_topics') }}">Manage Topics</a></li>  <!-- Update the route name to 'list_topics' -->
     </ul>
-    <a href="{{ url_for('logout') }}">Logout</a>
 </body>
-
 </html>

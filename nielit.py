@@ -208,6 +208,17 @@ def modify_topic(topic_id):
     flash("You do not have permission to access the Admin panel.", 'error')
     return redirect(url_for('dashboard'))
 
+@app.route('/admin/list_topics')
+@login_required
+def list_topics():
+    if current_user.is_authenticated and current_user.username == "admin":
+        # Fetch all topics from the database
+        topics = Topic.query.all()
+        return render_template('list_topics.html', topics=topics)
+
+    flash("You do not have permission to access the Admin panel.", 'error')
+    return redirect(url_for('dashboard'))
+  
 # Admin Panel - Delete Topic
 @app.route('/admin/delete_topic/<int:topic_id>', methods=['POST'])
 @login_required
@@ -232,4 +243,4 @@ def logout():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
