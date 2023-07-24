@@ -11,15 +11,15 @@
 
 <body>
     <div class="container mt-4">
-        <h1>Add New Topic</h1>
+       <center> <h1>Add New Topic</h1></center>
         <form action="{{ url_for('add_topic') }}" method="post">
             <div class="form-group">
-                <label for="topicImage">Topic Image URL:</label>
+                <label for="topicImage"><span style="color: red;">*</span>Topic Image URL:</label>
                 <input type="text" class="form-control" id="topicImage" name="topicImage" required>
             </div>
 
             <div class="form-group">
-                <label for="topicName">Topic Name:</label>
+                <label for="topicName"><span style="color: red;">*</span>Topic Name:</label>
                 <input type="text" class="form-control" id="topicName" name="topicName" required>
             </div>
 
@@ -29,7 +29,7 @@
             </div>
 
             <div class="form-group">
-                <label for="pdfLink">PDF Link:</label>
+                <label for="pdfLink"><span style="color: red;">*</span>PDF Link:</label>
                 <input type="text" class="form-control" id="pdfLink" name="pdfLink" required>
             </div>
 
