@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Welcome, Admin!</h1>
-    <ul>
-        <li><a href="{{ url_for('add_topic') }}">Add New Topic</a></li>
-        <li><a href="{{ url_for('list_users') }}">Manage Users</a></li>
-        <li><a href="{{ url_for('list_topics') }}">List Topics</a></li>
-    </ul>
-    <a href="{{ url_for('logout') }}">Logout</a>
+    <div class="container">
+        <h1>Welcome, NIELIT Admin!</h1>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="{{ url_for('add_topic') }}">Add New Topic</a></li>
+            <li class="list-group-item"><a href="{{ url_for('list_users') }}">Manage Users</a></li>
+            <li class="list-group-item"><a href="{{ url_for('list_topics') }}">List Topics</a></li>
+        </ul>
+        <a href="/" class="btn btn-primary mt-3">Homepage</a>
+      <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3">Logout</a>
+    </div>
+    
+    <!-- Add Bootstrap JS and jQuery scripts (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

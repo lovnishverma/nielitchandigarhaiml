@@ -4,24 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modify Topic</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Modify Topic</h1>
-    <form method="post" action="{{ url_for('modify_topic', topic_id=topic.id) }}">
-        <label for="topicImage">Topic Image URL:</label>
-        <input type="text" id="topicImage" name="topicImage" value="{{ topic.topic_image }}" required>
-        <br>
-        <label for="topicName">Topic Name:</label>
-        <input type="text" id="topicName" name="topicName" value="{{ topic.topic_name }}" required>
-        <br>
-        <label for="topicDetails">Topic Details:</label>
-        <textarea id="topicDetails" name="topicDetails" rows="4">{{ topic.topic_details }}</textarea>
-        <br>
-        <label for="pdfLink">PDF Link:</label>
-        <input type="text" id="pdfLink" name="pdfLink" value="{{ topic.pdf_link }}" required>
-        <br>
-        <button type="submit">Update Topic</button>
-    </form>
-    <a href="{{ url_for('admin_panel') }}">Back to Admin Panel</a>
+    <div class="container mt-4">
+        <h1>Modify Topic</h1>
+        <form method="post" action="{{ url_for('modify_topic', topic_id=topic.id) }}">
+            <div class="form-group">
+                <label for="topicImage">Topic Image URL:</label>
+                <input type="text" class="form-control" id="topicImage" name="topicImage" value="{{ topic.topic_image }}" required>
+            </div>
+            <div class="form-group">
+                <label for="topicName">Topic Name:</label>
+                <input type="text" class="form-control" id="topicName" name="topicName" value="{{ topic.topic_name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="topicDetails">Topic Details:</label>
+                <textarea class="form-control" id="topicDetails" name="topicDetails" rows="4">{{ topic.topic_details }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="pdfLink">PDF Link:</label>
+                <input type="text" class="form-control" id="pdfLink" name="pdfLink" value="{{ topic.pdf_link }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Topic</button>
+        </form>
+        <a href="{{ url_for('admin_panel') }}" class="btn btn-secondary mt-3">Back to Admin Panel</a>
+    </div>
+    
+    <!-- Add Bootstrap JS and jQuery scripts (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -5,26 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Topic</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h1>Add New Topic</h1>
-    <form action="{{ url_for('add_topic') }}" method="post">
-        <label for="topicImage">Topic Image URL:</label>
-        <input type="text" id="topicImage" name="topicImage" required><br>
+    <div class="container mt-4">
+        <h1>Add New Topic</h1>
+        <form action="{{ url_for('add_topic') }}" method="post">
+            <div class="form-group">
+                <label for="topicImage">Topic Image URL:</label>
+                <input type="text" class="form-control" id="topicImage" name="topicImage" required>
+            </div>
 
-        <label for="topicName">Topic Name:</label>
-        <input type="text" id="topicName" name="topicName" required><br>
+            <div class="form-group">
+                <label for="topicName">Topic Name:</label>
+                <input type="text" class="form-control" id="topicName" name="topicName" required>
+            </div>
 
-        <label for="topicDetails">Topic Details:</label>
-        <textarea id="topicDetails" name="topicDetails"></textarea><br>
+            <div class="form-group">
+                <label for="topicDetails">Topic Details:</label>
+                <textarea class="form-control" id="topicDetails" name="topicDetails"></textarea>
+            </div>
 
-        <label for="pdfLink">PDF Link:</label>
-        <input type="text" id="pdfLink" name="pdfLink" required><br>
+            <div class="form-group">
+                <label for="pdfLink">PDF Link:</label>
+                <input type="text" class="form-control" id="pdfLink" name="pdfLink" required>
+            </div>
 
-        <input type="submit" value="Add Topic">
-    </form>
-    <a href="{{ url_for('admin_panel') }}">Back to Admin Panel</a>
+            <button type="submit" class="btn btn-primary">Add Topic</button>
+        </form>
+        <a href="{{ url_for('admin_panel') }}" class="btn btn-secondary mt-3">Back to Admin Panel</a>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery scripts (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

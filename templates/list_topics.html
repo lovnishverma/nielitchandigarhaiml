@@ -4,25 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Topics</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles if needed */
+        /* Example: Increase spacing between list items */
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>List of Topics</h1>
-    <ul>
-        {% for topic in topics %}
-        <li>
-            <strong>Topic Name:</strong> {{ topic.topic_name }}<br>
-            <strong>Topic Details:</strong> {{ topic.topic_details }}<br>
-            <strong>PDF Link:</strong> <a href="{{ topic.pdf_link }}" target="_blank">{{ topic.pdf_link }}</a><br>
-            <strong>Topic Image:</strong> <img src="{{ topic.topic_image }}" alt="{{ topic.topic_name }}" style="max-width: 200px;">
-            <form action="{{ url_for('modify_topic', topic_id=topic.id) }}" method="GET">
-                <input type="submit" value="Modify">
-            </form>
-            <form action="{{ url_for('delete_topic', topic_id=topic.id) }}" method="POST">
-                <input type="submit" value="Delete">
-            </form>
-        </li>
-        {% endfor %}
-    </ul>
-    <a href="{{ url_for('admin_panel') }}">Back to Admin Panel</a>
+    <div class="container mt-4">
+        <h1>List of Topics</h1>
+        <ul class="list-group">
+            {% for topic in topics %}
+            <li class="list-group-item">
+                <strong>Topic Name:</strong> {{ topic.topic_name }}<br>
+                <strong>Topic Details:</strong> {{ topic.topic_details }}<br>
+                <strong>PDF Link:</strong> <a href="{{ topic.pdf_link }}" target="_blank">{{ topic.pdf_link }}</a><br>
+                <strong>Topic Image:</strong> <img src="{{ topic.topic_image }}" alt="{{ topic.topic_name }}" style="max-width: 200px;">
+                <form class="d-inline" action="{{ url_for('modify_topic', topic_id=topic.id) }}" method="GET">
+                    <button type="submit" class="btn btn-primary">Modify</button>
+                </form>
+                <form class="d-inline" action="{{ url_for('delete_topic', topic_id=topic.id) }}" method="POST">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('admin_panel') }}" class="btn btn-secondary mt-3">Back to Admin Panel</a>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery scripts (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
