@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: flask-aiml-app
+    env: python
+    plan: free
+    region: oregon  # or frankfurt / singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: python init_db.py && gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        value: ab#1867$@817  # change this to a secure value or use .env
+    autoDeploy: true
+    branch: main
